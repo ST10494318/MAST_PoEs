@@ -53,7 +53,7 @@ const initialMenuItems: MenuItem[] = [
     course: 'Dessert',
     price: 60,
   },
-    {
+  {
     id: '7',
     name: 'Craft Lemonade',
     description: 'House-made with fresh lemons, mint, and a hint of lavender',
@@ -67,7 +67,7 @@ const initialMenuItems: MenuItem[] = [
     course: 'Drink',
     price: 20,
   },
-    {
+  {
     id: '9',
     name: 'Truffle Parmesan Fries',
     description: 'Crispy fries tossed in truffle oil and grated parmesan',
@@ -80,6 +80,76 @@ const initialMenuItems: MenuItem[] = [
     description: 'Garlic and olive oil sautéed kale and spinach',
     course: 'Side',
     price: 35,
+  },
+  {
+    id: '11',
+    name: 'Calamari Fritti',
+    description: 'Lightly fried squid served with lemon aioli',
+    course: 'Starter',
+    price: 65,
+  },
+  {
+    id: '12',
+    name: 'Wild Mushroom Risotto',
+    description: 'Creamy arborio rice with porcini and shiitake mushrooms',
+    course: 'Main',
+    price: 110,
+  },
+  {
+    id: '13',
+    name: 'Tiramisu',
+    description: 'Classic Italian dessert with espresso-soaked ladyfingers',
+    course: 'Dessert',
+    price: 55,
+  },
+  {
+    id: '14',
+    name: 'Craft IPA',
+    description: 'Local IPA with citrus and pine notes',
+    course: 'Drink',
+    price: 40,
+  },
+  {
+    id: '15',
+    name: 'Truffle Mac & Cheese',
+    description: 'Gourmet macaroni with a three-cheese and truffle sauce',
+    course: 'Side',
+    price: 50,
+  },
+  {
+    id: '16',
+    name: 'Beef Carpaccio',
+    description: 'Thinly sliced raw beef with arugula, capers, and parmesan',
+    course: 'Starter',
+    price: 75,
+  },
+  {
+    id: '17',
+    name: 'Herb-Roasted Chicken',
+    description: 'Half chicken with rosemary, thyme, and roasted potatoes',
+    course: 'Main',
+    price: 130,
+  },
+  {
+    id: '18',
+    name: 'Cheese Platter',
+    description: 'Selection of three local cheeses with fruit and crackers',
+    course: 'Dessert',
+    price: 85,
+  },
+  {
+    id: '19',
+    name: 'Fresh Orange Juice',
+    description: 'Freshly squeezed, served chilled',
+    course: 'Drink',
+    price: 28,
+  },
+  {
+    id: '20',
+    name: 'Creamed Spinach',
+    description: 'Rich and creamy spinach with a touch of nutmeg',
+    course: 'Side',
+    price: 38,
   },
 ];
 
@@ -103,8 +173,7 @@ export default function HomeScreen({ navigation }: Props) {
   // Calculating average prices by course
   const averagePrices = useMemo(() => {
     const courseStats: { [key: string]: { total: number; count: number; average: number } } = {};
-    
-    // Initialize all course
+
     COURSES.forEach(course => {
       courseStats[course] = { total: 0, count: 0, average: 0 };
     });
@@ -132,7 +201,7 @@ export default function HomeScreen({ navigation }: Props) {
       <Text style={styles.itemName}>{item.name}</Text>
       <Text style={styles.itemDescription}>{item.description}</Text>
       <Text style={styles.itemDetails}>{item.course} - R{item.price.toFixed(2)}</Text>
-      <TouchableOpacity 
+      <TouchableOpacity
         style={styles.removeButton}
         onPress={() => removeMenuItem(item.id)}
       >
@@ -143,7 +212,7 @@ export default function HomeScreen({ navigation }: Props) {
 
   return (
     <View style={styles.container}>
-   
+
       <Text style={styles.header}>Christoffel's Menu</Text>
 
       {/* Total  Items */}
@@ -158,7 +227,7 @@ export default function HomeScreen({ navigation }: Props) {
           averagePrices[course].count > 0 && (
             <View key={course} style={styles.averageItem}>
               <Text style={styles.averageText}>
-                {course}: R{averagePrices[course].average.toFixed(2)} 
+                {course}: R{averagePrices[course].average.toFixed(2)}
                 <Text style={styles.countText}> ({averagePrices[course].count} items)</Text>
               </Text>
             </View>
@@ -177,7 +246,7 @@ export default function HomeScreen({ navigation }: Props) {
         >
           <Text style={styles.buttonText}>Add Menu Item</Text>
         </TouchableOpacity>
-        
+
         <TouchableOpacity
           style={styles.secondaryButton}
           onPress={() => navigation.navigate('FilterByCourse', { menuItems })}
