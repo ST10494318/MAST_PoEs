@@ -4,7 +4,7 @@ Repo link:
 [https://github.com/ST10494318/MAST_Part_2.git](https://github.com/ST10494318/MAST_PoEs.git)
 
 Video link :
-https://youtu.be/rHWBnXARrYA
+[https://youtu.be/rHWBnXARrYA](https://youtu.be/AO6xLW8XItg)
 
 Changelog - Christoffel's Menu App
 Project Overview
