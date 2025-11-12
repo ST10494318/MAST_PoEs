@@ -1,75 +1,157 @@
 MAST PROJECT 
 
 Repo link:
-https://github.com/ST10494318/MAST_Part_2.git
+[https://github.com/ST10494318/MAST_Part_2.git](https://github.com/ST10494318/MAST_PoEs.git)
 
 Video link :
 https://youtu.be/rHWBnXARrYA
 
-ScreemShots"
-<img width="1209" height="975" alt="Screenshot 2025-10-06 171832" src="https://github.com/user-attachments/assets/3e534d21-29e0-4589-adda-6f61b193f9b2" />
-<img width="1218" height="1002" alt="Screenshot 2025-10-06 171804" src="https://github.com/user-attachments/assets/99bad293-a39c-471a-be61-e53190150e6e" />
-<img width="1220" height="970" alt="Screenshot 2025-10-06 171754" src="https://github.com/user-attachments/assets/a7d6fbac-1320-463d-afb9-81ad12fb3b36" />
-<img width="1219" height="1013" alt="Screenshot 2025-10-06 171746" src="https://github.com/user-attachments/assets/d8db9582-e4de-4140-8fb0-c6a73dc84a49" />
-<img width="1906" height="1131" alt="Screenshot 2025-10-06 171727" src="https://github.com/user-attachments/assets/c87b6915-dada-417a-a2a8-a491189158a2" />
+Changelog - Christoffel's Menu App
+Project Overview
+A React Native restaurant menu management application with course filtering and item management capabilities.
 
-Chef Christoffel's Menu App 🍽️
-A React Native mobile application designed for private chef Christoffel to manage and display his culinary menu offerings. Built with TypeScript and Expo, this cross-platform app provides an elegant solution for menu management and guest viewing.
+Changes Made
+1. Initial Project Setup
+   
+Set up React Native project structure with TypeScript
 
-📱 Features
-For the Chef:
-Add Menu Items - Comprehensive form to add dishes with name, description, course selection, and pricing
+ Implemented navigation using React Navigation Stack
 
-Remove Items - Easy removal of menu items with confirmation alerts
+ Created base types and interfaces in types.ts
 
-Course Management - Predefined course categories (Starter, Main, Dessert, Side, Drink)
+2. Core Application Structure
+   
+ App.tsx: Configured navigation stack with 3 main screens
 
-Real-time Analytics - View total menu count and average prices per course
+ HomeScreen: Main dashboard with complete menu display
 
-For Guests:
-Complete Menu Display - Clean, scrollable view of all available dishes
+ AddMenuItemScreen: Form for adding new menu items
 
-Course Filtering - Filter menu items by specific course categories
+ FilterByCourseScreen: Filtering and statistics by course
 
-Detailed Information - View dish descriptions, pricing, and course classifications
+3. Data Model & Types
+   
+ Defined MenuItem interface with properties:
 
-🛠️ Technical Stack
-Frontend: React Native with TypeScript
+id: string
 
-Navigation: React Navigation Stack
+name: string
 
-UI Components: Custom-designed with React Native Stylesheet
+description: string
 
-State Management: React Hooks (useState, useMemo)
+course: string
 
-Development: Expo SDK 50
+price: number
 
-Key Components
+ Defined COURSES constant: ['Starter', 'Main', 'Dessert', 'Side', 'Drink']
 
-HomeScreen
-Displays complete menu with remove functionality
+4. Home Screen Features
+   
+ Complete menu display in FlatList
 
-Shows total menu item count
+ Real-time statistics: Total menu items count
 
-Calculates and displays average prices per course
+ Average price calculation per course
 
-Navigation to add and filter screens
+ Remove item functionality with confirmation alerts
 
-AddMenuItemScreen
-Form validation for all input fields
+ Navigation to Add and Filter screens
 
-Course selection via dropdown picker
+5. Add Menu Item Screen
+   
+ Form validation for all fields
 
-Price input with numeric keyboard
+Course selection via Picker component
 
-Success/error alert feedback
+ Price input with numeric validation
 
-FilterByCourseScreen
-Dynamic filtering by course category
+ Keyboard handling with KeyboardAvoidingView
 
-Shows filtered results count
+ Success feedback with alerts
 
-Course statistics display
+6. Filter by Course Screen
+   
+ Course-based filtering with Picker
+
+ Real-time item count display
+
+ Average price statistics per course
+
+ Empty state handling
+
+ Back navigation
+
+7. Initial Menu Data
+   
+ 20 pre-loaded menu items across all courses:
+
+Starters (4 items): Bruschetta, Caprese Salad, Calamari Fritti, Beef Carpaccio
+
+Main Courses (4 items): Grilled Salmon, Beef Fillet, Wild Mushroom Risotto, Herb-Roasted Chicken
+
+Desserts (4 items): Chocolate Fondant, Crème Brûlée, Tiramisu, Cheese Platter
+
+Sides (4 items): Truffle Parmesan Fries, Sautéed Seasonal Greens, Truffle Mac & Cheese, Creamed Spinach
+
+Drinks (4 items): Craft Lemonade, San Pellegrino, Craft IPA, Fresh Orange Juice
+
+8. UI/UX Enhancements
+   
+ Consistent color scheme and styling
+
+ Shadow effects and elevation for cards
+
+ Responsive button designs
+
+ Empty state messages
+
+ Loading states and user feedback
+
+9. State Management
+    
+ React hooks for state management
+
+ useMemo for optimized calculations
+
+Proper state updates for CRUD operations
+
+10. Navigation & Routing
+
+ Type-safe navigation with TypeScript
+
+ Proper parameter passing between screens
+
+ Consistent header styling
+
+Technical Features Implemented
+
+Core Functionality
+
+ Add new menu items
+
+ Remove existing items
+
+ Filter by course category
+
+ Real-time price statistics
+
+ Form validation
+
+User Experience
+ Responsive design
+
+ Immediate feedback for user actions
+
+ Intuitive navigation flow
+
+ Error handling and validation
+
+Data Management
+ Local state management
+
+ Efficient re-rendering with useMemo
+
+ Proper data structure and typing
 
 References :
 Academind. 2023. React Native Tutorial for Beginners. Available at: https://www.youtube.com/watch?v=0-S5a0eXPoc [Accessed 27 September 2024].
